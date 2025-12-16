@@ -1,5 +1,5 @@
 title = "My Researcher"
-baseURL = "https://username.github.io/"
+baseURL = "https:/weiii-qiao.github.io/"
 theme = "researcher"
 disableKinds = ["taxonomy", "term"]
 enableEmoji = true
