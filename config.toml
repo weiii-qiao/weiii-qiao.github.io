@@ -37,6 +37,9 @@ math = false          # enable KaTeX (https://katex.org/) globally
     title = "Scholar"
     url = "https://scholar.google.com/"
 
+[permalinks]
+  "/" = "/:filename"
+
 [menu]
   [[menu.main]]
     name = "About"
