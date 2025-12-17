@@ -1,7 +1,7 @@
 title = "Researcher"
 baseURL = "https://weiii-qiao.github.io/"
 theme = "researcher"
-disableKinds = ["taxonomy", "term"]
+disableKinds = ["taxonomy", "term", "RSS"]
 enableEmoji = true
 math = false          # enable KaTeX (https://katex.org/) globally
 
