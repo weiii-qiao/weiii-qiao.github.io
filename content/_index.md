@@ -1,5 +1,7 @@
 +++
 title = "About"
+type = "page"
+layout = "single"
 +++
 
 ## About Me
