@@ -70,6 +70,17 @@ ipsum nisl, consequat sit amet pretium quis, gravida id ipsum.
 <div class="experience-desc">Software Engineering</div>
 </div>
 
+## Service
+
+**Reviewer / Program Committee Member:**
+
+- *Knowledge-Based Systems*
+- *Proceedings of the ACM Web Conference* (WWW)
+- *Scientific Reports*
+- *International Conference on Computer Supported Cooperative Work in Design* (CSCWD)
+- *Journal of Information Security and Applications*
+- *AAAI Conference on Artificial Intelligence* (AAAI)
+
 ## Others
 This is a [link](http://google.com). Something *italics* and something **bold**.
 
