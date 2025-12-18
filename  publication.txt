@@ -1,0 +1,96 @@
+@article{li2023t,
+  title={T-trace: Constructing the apts provenance graphs through multiple syslogs correlation},
+  author={Li, Teng and Liu, Ximeng and Qiao, Wei and Zhu, Xiongjie and Shen, Yulong and Ma, Jianfeng},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  volume={21},
+  number={3},
+  pages={1179--1195},
+  year={2023},
+  publisher={IEEE}
+}
+
+@inproceedings{qiao2025slot,
+  title={Slot: Provenance-driven APT detection through graph reinforcement learning},
+  author={Qiao, Wei and Feng, Yebo and Li, Teng and Ma, Zhuo and Shen, Yulong and Ma, Jianfeng and Liu, Yang},
+  booktitle={Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security},
+  pages={963--977},
+  year={2025}
+}
+
+@inproceedings{wu2025brewing,
+  title={Brewing Vodka: Distilling Pure Knowledge for Lightweight Threat Detection in Audit Logs},
+  author={Wu, Weiheng and Qiao, Wei and Yan, Wenhao and Jiang, Bo and Liu, Yuling and Liu, Baoxu and Lu, Zhigang and Liu, Junrong},
+  booktitle={Proceedings of the ACM on Web Conference 2025},
+  pages={2172--2182},
+  year={2025}
+}
+
+@article{yan2025sentient,
+  title={Sentient: Multi-Scenario Behavioral Intent Analysis for Advanced Persistent Threat Detection},
+  author={Yan, Wenhao and An, Ning and Qiao, Wei and Wu, Weiheng and Jiang, Bo and Liu, Yuling and Lu, Zhigang and Liu, Junrong},
+  journal={AAAI},
+  year={2025}
+}
+
+@inproceedings{li2025chaos,
+  title={Chaos: Robust Spatio-Temporal Fusion for Generalizable APT Provenance Tracing},
+  author={Li, Teng and Qiao, Wei and Feng, Yebo and Xu, Jiahua and Tasca, Paolo and Lin, Weiguo and Dang, Zexu and Ma, Zhuo and Ma, Jianfeng},
+  booktitle={International Conference on Data Security and Privacy Protection},
+  pages={507--524},
+  year={2025},
+  organization={Springer}
+}
+
+@article{qiao2025sauroneyes,
+  title={SauronEyes: Disentangling Voluminous Logs to Unveil Camouflaged Attack Intentions},
+  author={Qiao, Wei and Wu, Weiheng and Liu, Song and Li, Teng and Feng, Yebo and Wang, Zehui and Liu, Junrong and Jiang, Bo and Lu, Zhigang and Liu, Baoxu},
+  journal={IEEE Transactions on Information Forensics and Security},
+  year={2025},
+  publisher={IEEE}
+}
+
+@article{wu2025provx,
+  title={ProvX: Generating Counterfactual-Driven Attack Explanations for Provenance-Based Detection},
+  author={Wu, Weiheng and Qiao, Wei and Li, Teng and Feng, Yebo and Ma, Zhuo and Ma, Jianfeng and Liu, Yang},
+  journal={arXiv preprint arXiv:2508.06073},
+  year={2025}
+}
+
+@article{li2025towards,
+  title={Towards effective black-box attacks on DoH tunnel detection systems},
+  author={Li, Linghao and Zhu, Yan and Li, Yun and Qiao, Wei and Cui, Zelin and Cui, Susu and Jiang, Bo and Lu, Zhigang},
+  journal={Computer Networks},
+  pages={111524},
+  year={2025},
+  publisher={Elsevier}
+}
+
+@article{wang2025pathwatcher,
+  title={PathWatcher: A path-based behavior detection method for attack detection and investigation},
+  author={Wang, Zehui and Li, Hao and Qi, Yinhao and Qiao, Wei and Liu, Song and Zhang, Chen and Jiang, Bo and Lu, Zhigang},
+  journal={Computers \& Security},
+  pages={104563},
+  year={2025},
+  publisher={Elsevier}
+}
+
+@inproceedings{yan2025panthreat,
+  title={PanThreat: Global Resource-Based Anomaly Detection for APTs},
+  author={Yan, Wenhao and Wu, Weiheng and Bi, Bingsheng and Qiao, Wei and Jiang, Bo and Liu, Yuling and Liu, Junrong},
+  booktitle={2025 28th International Conference on Computer Supported Cooperative Work in Design (CSCWD)},
+  pages={135--140},
+  year={2025},
+  organization={IEEE}
+}
+
+@inproceedings{li2025dcasi,
+  title={DCASI: A Sequence-based Attack Investigation Method Using DTW Contrastive Learning},
+  author={Li, Yun and Qiao, Wei and Zhu, Yan and Wang, Yunxiang and Jiang, Bo and Lu, Zhigang},
+  booktitle={ICASSP 2025-2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={1--5},
+  year={2025},
+  organization={IEEE}
+}
+
+
+
