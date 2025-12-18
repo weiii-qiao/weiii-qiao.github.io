@@ -8,8 +8,7 @@ layout = "single"
 
 {{< figure class="avatar" src="/avatar.jpg" alt="avatar">}}
 
-This is a Hugo based resume template. You can find the full source code on
-[GitHub](https://github.com/ojroques/hugo-researcher).
+I am currently pursuing my Master’s degree at Group 4 (G4), Laboratory 9, Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS). My research focuses on cybersecurity, specifically in host-based intrusion detection, APT provenance, and LLM agents for security. I hold a Bachelor of Engineering degree in Software Engineering from Xidian University.
 
 ## Research Interest
 
