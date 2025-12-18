@@ -20,11 +20,15 @@ Fusce pharetra diam ac nisi aliquet, velegestas ex iaculis. Pellentesque
 laoreet cursus tellus sed pellentesque. Praesent a rhoncus elit[^2]. Nunc
 ipsum nisl, consequat sit amet pretium quis, gravida id ipsum.
 
-## Publications
+## Selected Publications
 
-In chronological order:
-1. F.Bar, J.Doe: Effects of having a placeholder of a name
-2. S.Holmes, J.Watson: Consequences of living with a sociopath in London
+- **Slot: Provenance-Driven APT Detection through Graph Reinforcement Learning.**  
+  Wei Qiao, Yebo Feng, Teng Li, Zhuo Ma, Yulong Shen, JianFeng Ma, Yang Liu.  
+  *Conference Name*, Year. <a href="https://dl.acm.org/doi/abs/10.1145/3719027.3744788" class="pdf-link">PDF</a>
+
+- **Paper Title 2.**  
+  Author Name(s), Co-author Name(s).  
+  *Conference/Journal Name*, Year. <a href="#" class="pdf-link">PDF</a>
 
 ## Typography
 
