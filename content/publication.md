@@ -46,8 +46,8 @@ title = "Publication"
   Yun Li, <u>Wei Qiao</u>, Yan Zhu, Yunxiang Wang, Bo Jiang, Zhigang Lu.  
   *2025 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)*, 2025, pp. 1-5.
   
-- **LogWF: Anomaly Detection for Distributed Systems Based on Log Workflow Mining.**
-  Teng Li, Shengkai Zhang, Yebo Feng, Jiahua Xu, Yaxuan Xie, <u>Wei Qiao</u>, Jianfeng Ma.
+- **LogWF: Anomaly Detection for Distributed Systems Based on Log Workflow Mining.**  
+  Teng Li, Shengkai Zhang, Yebo Feng, Jiahua Xu, Yaxuan Xie, <u>Wei Qiao</u>, Jianfeng Ma.  
   *45th IEEE International Conference on Distributed Computing Systems WorkShop (ICDCSW)*, 2025.
 
 ### 2023
