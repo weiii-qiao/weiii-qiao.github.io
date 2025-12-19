@@ -39,6 +39,20 @@ ipsum nisl, consequat sit amet pretium quis, gravida id ipsum.
 
 
 
+## Education
+
+<div class="experience-item">
+<div class="experience-date">Sep. 2023 - Present</div>
+<div class="experience-title">Master's Degree</div>
+<div class="experience-org">Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS), Group 4 (G4), Laboratory 9</div>
+</div>
+
+<div class="experience-item">
+<div class="experience-date">Sep. 2017 - Jun. 2021</div>
+<div class="experience-title">Bachelor of Engineering</div>
+<div class="experience-org">Xidian University</div>
+</div>
+
 ## Experience
 
 <div class="experience-item">
@@ -48,9 +62,9 @@ ipsum nisl, consequat sit amet pretium quis, gravida id ipsum.
 </div>
 
 <div class="experience-item">
-<div class="experience-date">Sep. 2023 - Present</div>
-<div class="experience-title">Master's Degree</div>
-<div class="experience-org">Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS), Group 4 (G4), Laboratory 9</div>
+<div class="experience-date">Mar. 2023 - Sep. 2023</div>
+<div class="experience-title">Research Intern</div>
+<div class="experience-org">Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS)</div>
 </div>
 
 <div class="experience-item">
@@ -60,14 +74,8 @@ ipsum nisl, consequat sit amet pretium quis, gravida id ipsum.
 </div>
 
 <div class="experience-item">
-<div class="experience-date">2021 - 2022</div>
+<div class="experience-date">Jun. 2021 - Sep. 2022</div>
 <div class="experience-title">Research Assistant</div>
-<div class="experience-org">Xidian University</div>
-</div>
-
-<div class="experience-item">
-<div class="experience-date">2017 - 2021</div>
-<div class="experience-title">Bachelor of Engineering</div>
 <div class="experience-org">Xidian University</div>
 </div>
 
