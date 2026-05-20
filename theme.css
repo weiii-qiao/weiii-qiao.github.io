@@ -1,0 +1,104 @@
+/* Toggle button */
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.3rem;
+  opacity: 0.5;
+  transition: opacity 0.2s, transform 0.2s;
+  user-select: none;
+  line-height: 1;
+  padding: 0 4px;
+}
+.theme-toggle:hover {
+  opacity: 1;
+  transform: scale(1.15);
+}
+
+/* ====== Light Theme (warm, readable) ====== */
+
+[data-theme="light"] body {
+  background-color: #e8e2da;
+  color: #2c2a27;
+}
+
+[data-theme="light"] .editor {
+  background: #f2ede7;
+  border-color: #c9c2b8;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+}
+
+[data-theme="light"] .titlebar {
+  background: #d8d1c7;
+  border-bottom-color: #c9c2b8;
+}
+[data-theme="light"] .titlebar-text { color: #7a756e; }
+
+[data-theme="light"] .tabbar {
+  background: #e3ddd5;
+  border-bottom-color: #c9c2b8;
+}
+[data-theme="light"] .tab {
+  color: #6e6962;
+  border-right-color: #c9c2b8;
+}
+[data-theme="light"] .tab:hover { background: #d8d1c7; color: #2c2a27; }
+[data-theme="light"] .tab.active { background: #f2ede7; color: #1e1c1a; }
+
+[data-theme="light"] .line:hover { background: #e8e2da; }
+[data-theme="light"] .ln { color: #9e9890; }
+
+/* Syntax */
+[data-theme="light"] .cm { color: #4e6d38; }
+[data-theme="light"] .kw { color: #2a5fa0; }
+[data-theme="light"] .str { color: #a04e2c; }
+[data-theme="light"] .fn { color: #7a5c2e; }
+[data-theme="light"] .type { color: #226878; }
+[data-theme="light"] .num { color: #3a7a4e; }
+
+/* Separators */
+[data-theme="light"] .section-sep { border-top-color: #c9c2b8; }
+
+/* Item borders */
+[data-theme="light"] .paper-item,
+[data-theme="light"] .pub-item,
+[data-theme="light"] .exp-item {
+  border-left-color: #c9c2b8;
+}
+
+/* Person page */
+[data-theme="light"] a.link { color: #226878; }
+[data-theme="light"] a.pdf-link { color: #226878; }
+[data-theme="light"] .paper-title { color: #6a5028; }
+[data-theme="light"] .paper-authors { color: #5e5a54; }
+[data-theme="light"] .paper-authors .me { color: #7a3a7a; }
+[data-theme="light"] .paper-venue { color: #2a5fa0; }
+[data-theme="light"] .paper-award { color: #6a5028; }
+[data-theme="light"] .legend-line { color: #4e6d38; }
+[data-theme="light"] .tag-ccfa {
+  background: rgba(42,95,160,0.12);
+  color: #2a5fa0;
+  border-color: rgba(42,95,160,0.3);
+}
+[data-theme="light"] .tag-big4 {
+  background: rgba(106,80,40,0.12);
+  color: #6a5028;
+  border-color: rgba(106,80,40,0.3);
+}
+[data-theme="light"] .tag-oral {
+  background: rgba(122,58,122,0.12);
+  color: #7a3a7a;
+  border-color: rgba(122,58,122,0.3);
+}
+
+/* Publication page */
+[data-theme="light"] .pub-title { color: #6a5028; }
+[data-theme="light"] .pub-venue { color: #2a5fa0; }
+[data-theme="light"] .pub-award { color: #6a5028; }
+[data-theme="light"] .pub-authors { color: #5e5a54; }
+[data-theme="light"] .pub-authors .me { color: #7a3a7a; }
+[data-theme="light"] .year-line { color: #2a5fa0; }
+
+/* Experience page */
+[data-theme="light"] .section-line { color: #2a5fa0; }
+[data-theme="light"] .exp-role { color: #6a5028; }
+[data-theme="light"] .exp-time { color: #4e6d38; }
+[data-theme="light"] .exp-org { color: #226878; }

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wei Qiao - Homepage</title>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme-preference')||'dark')</script>
+  <link rel="stylesheet" href="theme.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -30,10 +32,10 @@
     /* 标题栏 */
     .titlebar {
       background: #323233;
-      padding: 8px 12px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       border-bottom: 1px solid #3c3c3c;
     }
 
@@ -51,7 +53,7 @@
       flex: 1;
       text-align: center;
       color: #888;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
     }
 
     /* Tab 栏 */
@@ -203,7 +205,7 @@
     @media (max-width: 600px) {
       body { padding: 12px 6px; }
       .editor { border-radius: 4px; }
-      .titlebar-text { font-size: 0.7rem; }
+      .titlebar-text { font-size: 0.82rem; }
       .tabbar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .tab { padding: 7px 10px; font-size: 0.78rem; white-space: nowrap; flex-shrink: 0; }
       .tab-icon { display: none; }
@@ -222,7 +224,8 @@
     <div class="titlebar-dot dot-red"></div>
     <div class="titlebar-dot dot-yellow"></div>
     <div class="titlebar-dot dot-green"></div>
-    <div class="titlebar-text">Wei Qiao — weiqiao.me</div>
+    <div class="titlebar-text">Wei Qiao (乔伟) · ✉ qiaoweixidian@gmail.com</div>
+    <span class="theme-toggle" onclick="toggleTheme()">☀</span>
   </div>
 
   <div class="tabbar">
@@ -281,5 +284,6 @@
   </div>
 </div>
 
+<script src="theme.js"></script>
 </body>
 </html>

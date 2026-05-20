@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wei Qiao - Publications</title>
+  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme-preference')||'dark')</script>
+  <link rel="stylesheet" href="theme.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -29,10 +31,10 @@
 
     .titlebar {
       background: #323233;
-      padding: 8px 12px;
+      padding: 10px 16px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       border-bottom: 1px solid #3c3c3c;
     }
 
@@ -40,7 +42,7 @@
     .dot-red { background: #ff5f57; }
     .dot-yellow { background: #febc2e; }
     .dot-green { background: #28c840; }
-    .titlebar-text { flex: 1; text-align: center; color: #888; font-size: 0.8rem; }
+    .titlebar-text { flex: 1; text-align: center; color: #888; font-size: 0.95rem; }
 
     .tabbar {
       background: #252526;
@@ -140,7 +142,7 @@
     @media (max-width: 600px) {
       body { padding: 12px 6px; }
       .editor { border-radius: 4px; }
-      .titlebar-text { font-size: 0.7rem; }
+      .titlebar-text { font-size: 0.82rem; }
       .tabbar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
       .tab { padding: 7px 10px; font-size: 0.78rem; white-space: nowrap; flex-shrink: 0; }
       .tab-icon { display: none; }
@@ -158,7 +160,8 @@
     <div class="titlebar-dot dot-red"></div>
     <div class="titlebar-dot dot-yellow"></div>
     <div class="titlebar-dot dot-green"></div>
-    <div class="titlebar-text">Wei Qiao — weiqiao.me</div>
+    <div class="titlebar-text">Wei Qiao (乔伟) · ✉ qiaoweixidian@gmail.com</div>
+    <span class="theme-toggle" onclick="toggleTheme()">☀</span>
   </div>
 
   <div class="tabbar">
@@ -190,7 +193,7 @@
     <div class="line"><span class="ln">13</span><span class="code"><div class="pub-item"><span class="pub-title">Sentient: Multi-Scenario Behavioral Intent Analysis for Advanced Persistent Threat Detection.</span><br><span class="pub-authors">Wenhao Yan, Ning An, <span class="me">Wei Qiao</span>, Weiheng Wu, Bo Jiang, Yuling Liu, Zhigang Lu, Junrong Liu.</span><br><span class="pub-venue">AAAI Conference on Artificial Intelligence (AAAI)</span>, 2025.</div></span></div>
     <div class="line"><span class="ln">14</span><span class="code"></span></div>
 
-    <div class="line"><span class="ln">15</span><span class="code"><div class="pub-item"><span class="pub-title">ProvX: Generating Counterfactual-Driven Attack Explanations for Provenance-Based Detection.</span><br><span class="pub-authors">Weiheng Wu, <span class="me">Wei Qiao</span>, Teng Li, Yebo Feng, Zhuo Ma, Jianfeng Ma, Yang Liu.</span><br><span class="pub-venue">arXiv preprint arXiv:2508.06073</span>, 2025.</div></span></div>
+    <div class="line"><span class="ln">15</span><span class="code"><div class="pub-item"><span class="pub-title">Cutting the Fuse: Actionable APT Attack Blocking in Provenance-based IDS.</span><br><span class="pub-authors">Weiheng Wu, <span class="me">Wei Qiao</span><sup>#</sup>, Teng Li, Yebo Feng, Zhuo Ma, Jianfeng Ma, Yang Liu.</span><br><span class="pub-venue">USENIX Security</span><span class="tag tag-ccfa">CCF-A</span><span class="tag tag-big4">Big 4</span>, 2026.</div></span></div>
     <div class="line"><span class="ln">16</span><span class="code"></span></div>
 
     <div class="line"><span class="ln">17</span><span class="code"><div class="pub-item"><span class="pub-title">Towards Effective Black-Box Attacks on DoH Tunnel Detection Systems.</span><br><span class="pub-authors">Linghao Li, Yan Zhu, Yun Li, <span class="me">Wei Qiao</span>, Zelin Cui, Susu Cui, Bo Jiang, Zhigang Lu.</span><br><span class="pub-venue">Computer Networks</span>, 2025, pp. 111524.</div></span></div>
@@ -223,5 +226,6 @@
   </div>
 </div>
 
+<script src="theme.js"></script>
 </body>
 </html>
