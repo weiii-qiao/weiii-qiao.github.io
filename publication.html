@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wei Qiao - Publications</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0f19;
+      color: #c5d1e0;
+      font-family: 'Courier New', Consolas, Monaco, monospace;
+      margin: 0;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 750px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin: 0 0 20px 0;
+      color: #ffffff;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #3a4d7c, transparent);
+      border: none;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .navbar {
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .navbar a {
+      color: #7e8c9d;
+      text-decoration: none;
+      margin: 0 12px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .navbar a:hover, .navbar a.active {
+      color: #4fc3f7;
+      text-shadow: 0 0 8px rgba(79, 195, 247, 0.6);
+    }
+
+    .navbar .sep {
+      color: #3a4d7c;
+      user-select: none;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .terminal-box {
+      background-color: #111827;
+      border: 1px solid #1f293d;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: left;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .year-title {
+      font-size: 1.15rem;
+      color: #4fc3f7;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #1f293d;
+      padding-bottom: 8px;
+    }
+
+    .year-title:first-child {
+      margin-top: 0;
+    }
+
+    .pub-item {
+      margin-bottom: 20px;
+      line-height: 1.75;
+      font-size: 0.95rem;
+      text-align: left;
+      padding-left: 12px;
+      border-left: 2px solid #1f293d;
+      transition: border-color 0.3s ease;
+    }
+
+    .pub-item:hover {
+      border-left-color: #4fc3f7;
+    }
+
+    .pub-title {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .pub-venue {
+      color: #4fc3f7;
+      font-style: italic;
+    }
+
+    .pub-award {
+      color: #f6ad55;
+      font-weight: 600;
+    }
+
+    .pub-authors {
+      color: #8899aa;
+    }
+
+    .pub-authors .me {
+      color: #a78bfa;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="name">Wei Qiao</h1>
+
+    <hr class="divider">
+
+    <nav class="navbar">
+      <a href="person.html">About</a>
+      <span class="sep">/</span>
+      <a href="publication.html" class="active">Publication</a>
+      <span class="sep">/</span>
+      <a href="experience.html">Experience</a>
+      <span class="sep">/</span>
+      <a href="#resume">Resume</a>
+    </nav>
+
+    <h2 class="section-title">Publications</h2>
+
+    <div class="terminal-box">
+
+      <div class="year-title">2025</div>
+
+      <div class="pub-item">
+        <div class="pub-title">Slot: Provenance-Driven APT Detection through Graph Reinforcement Learning.</div>
+        <div class="pub-authors"><span class="me">Wei Qiao</span>, Yebo Feng, Teng Li, Zhuo Ma, Yulong Shen, JianFeng Ma, Yang Liu.</div>
+        <div><span class="pub-venue">Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security (CCS)</span>, 2025, pp. 963-977.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">SauronEyes: Disentangling Voluminous Logs to Unveil Camouflaged Attack Intentions.</div>
+        <div class="pub-authors"><span class="me">Wei Qiao</span>, Weiheng Wu, Song Liu, Teng Li, Yebo Feng, Zehui Wang, Junrong Liu, Bo Jiang, Zhigang Lu, Baoxu Liu.</div>
+        <div><span class="pub-venue">IEEE Transactions on Information Forensics and Security (TIFS)</span>, 2025.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Chaos: Robust Spatio-Temporal Fusion for Generalizable APT Provenance Tracing.</div>
+        <div class="pub-authors">Teng Li, <span class="me">Wei Qiao</span>(*), Yebo Feng, Jiahua Xu, Paolo Tasca, Weiguo Lin, Zexu Dang, Zhuo Ma, Jianfeng Ma.</div>
+        <div><span class="pub-venue">International Conference on Data Security and Privacy Protection (DSPP)</span>, 2025, pp. 507-524. <span class="pub-award">Best Paper Award</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Brewing Vodka: Distilling Pure Knowledge for Lightweight Threat Detection in Audit Logs.</div>
+        <div class="pub-authors">Weiheng Wu, <span class="me">Wei Qiao</span>, Wenhao Yan, Bo Jiang, Yuling Liu, Baoxu Liu, Zhigang Lu, Junrong Liu.</div>
+        <div><span class="pub-venue">Proceedings of the ACM on Web Conference 2025 (WWW)</span>, 2025, pp. 2172-2182.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Sentient: Multi-Scenario Behavioral Intent Analysis for Advanced Persistent Threat Detection.</div>
+        <div class="pub-authors">Wenhao Yan, Ning An, <span class="me">Wei Qiao</span>, Weiheng Wu, Bo Jiang, Yuling Liu, Zhigang Lu, Junrong Liu.</div>
+        <div><span class="pub-venue">AAAI Conference on Artificial Intelligence (AAAI)</span>, 2025.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">ProvX: Generating Counterfactual-Driven Attack Explanations for Provenance-Based Detection.</div>
+        <div class="pub-authors">Weiheng Wu, <span class="me">Wei Qiao</span>, Teng Li, Yebo Feng, Zhuo Ma, Jianfeng Ma, Yang Liu.</div>
+        <div><span class="pub-venue">arXiv preprint arXiv:2508.06073</span>, 2025.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">Towards Effective Black-Box Attacks on DoH Tunnel Detection Systems.</div>
+        <div class="pub-authors">Linghao Li, Yan Zhu, Yun Li, <span class="me">Wei Qiao</span>, Zelin Cui, Susu Cui, Bo Jiang, Zhigang Lu.</div>
+        <div><span class="pub-venue">Computer Networks</span>, 2025, pp. 111524.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">PathWatcher: A Path-Based Behavior Detection Method for Attack Detection and Investigation.</div>
+        <div class="pub-authors">Zehui Wang, Hao Li, Yinhao Qi, <span class="me">Wei Qiao</span>, Song Liu, Chen Zhang, Bo Jiang, Zhigang Lu.</div>
+        <div><span class="pub-venue">Computers & Security</span>, 2025, pp. 104563.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">PanThreat: Global Resource-Based Anomaly Detection for APTs.</div>
+        <div class="pub-authors">Wenhao Yan, Weiheng Wu, Bingsheng Bi, <span class="me">Wei Qiao</span>, Bo Jiang, Yuling Liu, Junrong Liu.</div>
+        <div><span class="pub-venue">28th International Conference on Computer Supported Cooperative Work in Design (CSCWD)</span>, 2025, pp. 135-140.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">DCASI: A Sequence-based Attack Investigation Method Using DTW Contrastive Learning.</div>
+        <div class="pub-authors">Yun Li, <span class="me">Wei Qiao</span>, Yan Zhu, Yunxiang Wang, Bo Jiang, Zhigang Lu.</div>
+        <div><span class="pub-venue">IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</span>, 2025, pp. 1-5.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">LogWF: Anomaly Detection for Distributed Systems Based on Log Workflow Mining.</div>
+        <div class="pub-authors">Teng Li, Shengkai Zhang, Yebo Feng, Jiahua Xu, Yaxuan Xie, <span class="me">Wei Qiao</span>, Jianfeng Ma.</div>
+        <div><span class="pub-venue">45th IEEE International Conference on Distributed Computing Systems WorkShop (ICDCSW)</span>, 2025.</div>
+      </div>
+
+      <div class="year-title">2023</div>
+
+      <div class="pub-item">
+        <div class="pub-title">T-trace: Constructing the APTs Provenance Graphs through Multiple Syslogs Correlation.</div>
+        <div class="pub-authors">Teng Li, Ximeng Liu, <span class="me">Wei Qiao</span>, Xiongjie Zhu, Yulong Shen, Jianfeng Ma.</div>
+        <div><span class="pub-venue">IEEE Transactions on Dependable and Secure Computing (TDSC)</span>, 2023, vol. 21, no. 3, pp. 1179-1195.</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

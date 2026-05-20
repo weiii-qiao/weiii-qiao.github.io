@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wei Qiao - Experience</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0f19;
+      color: #c5d1e0;
+      font-family: 'Courier New', Consolas, Monaco, monospace;
+      margin: 0;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 750px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin: 0 0 20px 0;
+      color: #ffffff;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #3a4d7c, transparent);
+      border: none;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .navbar {
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .navbar a {
+      color: #7e8c9d;
+      text-decoration: none;
+      margin: 0 12px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .navbar a:hover, .navbar a.active {
+      color: #4fc3f7;
+      text-shadow: 0 0 8px rgba(79, 195, 247, 0.6);
+    }
+
+    .navbar .sep {
+      color: #3a4d7c;
+      user-select: none;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #4fc3f7;
+      letter-spacing: 2px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      text-align: left;
+      border-bottom: 1px solid #1f293d;
+      padding-bottom: 8px;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    .terminal-box {
+      background-color: #111827;
+      border: 1px solid #1f293d;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: left;
+      line-height: 1.8;
+      font-size: 1.05rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .exp-item {
+      margin-bottom: 24px;
+      padding-left: 12px;
+      border-left: 2px solid #1f293d;
+      transition: border-color 0.3s ease;
+    }
+
+    .exp-item:hover {
+      border-left-color: #4fc3f7;
+    }
+
+    .exp-time {
+      color: #8899aa;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .exp-role {
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .exp-org {
+      color: #c5d1e0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="name">Wei Qiao</h1>
+
+    <hr class="divider">
+
+    <nav class="navbar">
+      <a href="person.html">About</a>
+      <span class="sep">/</span>
+      <a href="publication.html">Publication</a>
+      <span class="sep">/</span>
+      <a href="experience.html" class="active">Experience</a>
+      <span class="sep">/</span>
+      <a href="#resume">Resume</a>
+    </nav>
+
+    <div class="terminal-box">
+
+      <div class="section-title">Education</div>
+
+      <div class="exp-item">
+        <div class="exp-time">Sep. 2023 - Present</div>
+        <div class="exp-role">Master's Degree</div>
+        <div class="exp-org">Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS), Group 4 (G4), Laboratory 9</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-time">Sep. 2017 - Jun. 2021</div>
+        <div class="exp-role">Bachelor of Engineering</div>
+        <div class="exp-org">Xidian University</div>
+      </div>
+
+      <div class="section-title">Work Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-time">Sep. 2025 - Present</div>
+        <div class="exp-role">Security Algorithm Intern</div>
+        <div class="exp-org">Bybit, Risk Control Algorithm Department</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-time">Mar. 2023 - Sep. 2023</div>
+        <div class="exp-role">Research Intern</div>
+        <div class="exp-org">Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS)</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-time">Sep. 2022 - Nov. 2022</div>
+        <div class="exp-role">Software Development Engineer</div>
+        <div class="exp-org">Huawei, Cloud Computing</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-time">Jun. 2021 - Sep. 2022</div>
+        <div class="exp-role">Research Assistant</div>
+        <div class="exp-org">Xidian University</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

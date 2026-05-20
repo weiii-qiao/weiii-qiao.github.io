@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wei Qiao - Homepage</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0b0f19;
+      color: #c5d1e0;
+      font-family: 'Courier New', Consolas, Monaco, monospace;
+      margin: 0;
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 750px;
+      text-align: center;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      margin: 0 0 20px 0;
+      color: #ffffff;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #3a4d7c, transparent);
+      border: none;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .navbar {
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+    }
+
+    .navbar a {
+      color: #7e8c9d;
+      text-decoration: none;
+      margin: 0 12px;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #4fc3f7;
+      text-shadow: 0 0 8px rgba(79, 195, 247, 0.6);
+    }
+
+    .navbar .sep {
+      color: #3a4d7c;
+      user-select: none;
+    }
+
+    .terminal-box {
+      background-color: #111827;
+      border: 1px solid #1f293d;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: left;
+      line-height: 1.9;
+      font-size: 1rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .terminal-box p {
+      margin: 0 0 16px 0;
+    }
+
+    .terminal-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    a.prof {
+      color: #4fc3f7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a.prof:hover {
+      color: #81d4fa;
+      text-decoration: underline;
+    }
+
+    .research-list {
+      list-style: none;
+      padding-left: 8px;
+      margin: 8px 0 0 0;
+      border-left: 2px solid #1f293d;
+    }
+
+    .research-list li {
+      padding-left: 12px;
+      margin-bottom: 4px;
+      color: #e2e8f0;
+    }
+
+    .research-list li::before {
+      content: "> ";
+      color: #4fc3f7;
+    }
+
+    .section-heading {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 2px;
+      margin-top: 50px;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .legend {
+      color: #8899aa;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    .selected-box {
+      background-color: #111827;
+      border: 1px solid #1f293d;
+      border-radius: 8px;
+      padding: 25px 30px;
+      text-align: left;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .paper-item {
+      margin-bottom: 22px;
+      padding-left: 12px;
+      border-left: 2px solid #1f293d;
+      transition: border-color 0.3s ease;
+    }
+
+    .paper-item:hover {
+      border-left-color: #4fc3f7;
+    }
+
+    .paper-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .paper-title {
+      color: #e2e8f0;
+      font-weight: 600;
+    }
+
+    .paper-authors {
+      color: #8899aa;
+    }
+
+    .paper-authors .me {
+      color: #e2e8f0;
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    .paper-venue {
+      color: #4fc3f7;
+      font-style: italic;
+    }
+
+    .paper-award {
+      color: #f6ad55;
+      font-weight: 600;
+    }
+
+    a.pdf-link {
+      color: #4fc3f7;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    a.pdf-link:hover {
+      color: #81d4fa;
+      text-decoration: underline;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-style: normal;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    .tag-ccfa {
+      background-color: rgba(79, 195, 247, 0.15);
+      color: #4fc3f7;
+      border: 1px solid rgba(79, 195, 247, 0.3);
+    }
+
+    .tag-big4 {
+      background-color: rgba(246, 173, 85, 0.15);
+      color: #f6ad55;
+      border: 1px solid rgba(246, 173, 85, 0.3);
+    }
+
+    .tag-oral {
+      background-color: rgba(167, 139, 250, 0.15);
+      color: #a78bfa;
+      border: 1px solid rgba(167, 139, 250, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="name">Wei Qiao</h1>
+
+    <hr class="divider">
+
+    <nav class="navbar">
+      <a href="person.html">About</a>
+      <span class="sep">/</span>
+      <a href="publication.html">Publication</a>
+      <span class="sep">/</span>
+      <a href="experience.html">Experience</a>
+      <span class="sep">/</span>
+      <a href="#resume">Resume</a>
+    </nav>
+
+    <div class="terminal-box">
+      <p>I am an incoming Ph.D. student at Xidian University, where I will be advised by <a class="prof" href="https://faculty.xidian.edu.cn/LT6/zh_CN/index.htm">Prof. Teng Li</a> in <a class="prof" href="https://web.xidian.edu.cn/jfma/">Prof. Jianfeng Ma</a>'s group. Currently, I am a Research Assistant in <a class="prof" href="https://personal.ntu.edu.sg/yangliu/">Prof. Yang Liu</a>'s group at Nanyang Technological University (NTU).</p>
+
+      <p>I am completing my Master's degree at the Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS), advised by <a class="prof" href="https://people.ucas.ac.cn/~bojiang">Assoc. Prof. Bo Jiang</a> in <a class="prof" href="https://people.ucas.ac.cn/~luzhigang">Prof. Zhigang Lu</a>'s team. I hold a B.E. in Software Engineering from Xidian University.</p>
+
+      <p>My research primarily focuses on cybersecurity, specifically:</p>
+      <ul class="research-list">
+        <li>Host-based Intrusion Detection</li>
+        <li>APT Provenance</li>
+        <li>LLM Agents for Security</li>
+      </ul>
+    </div>
+
+    <h2 class="section-heading">Selected Papers</h2>
+    <div class="legend"><span style="text-decoration: underline;">Wei Qiao</span> &nbsp;|&nbsp; # Co-first Author &nbsp;|&nbsp; * Corresponding Author</div>
+
+    <div class="selected-box">
+
+      <div class="paper-item">
+        <div class="paper-title">Cutting the Fuse: Actionable APT Attack Blocking in Provenance-based IDS.</div>
+        <div class="paper-authors">Weiheng Wu, <span class="me">Wei Qiao</span><sup>#</sup>, Teng Li, Yebo Feng, Zhuo Ma, Jianfeng Ma, Yang Liu.</div>
+        <div><span class="paper-venue">USENIX Security</span><span class="tag tag-ccfa">CCF-A</span><span class="tag tag-big4">Big 4</span>, 2026. <a class="pdf-link" href="#">[PDF]</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">Slot: Provenance-Driven APT Detection through Graph Reinforcement Learning.</div>
+        <div class="paper-authors"><span class="me">Wei Qiao</span>, Yebo Feng, Teng Li, Zhuo Ma, Yulong Shen, JianFeng Ma, Yang Liu.</div>
+        <div><span class="paper-venue">CCS</span><span class="tag tag-ccfa">CCF-A</span><span class="tag tag-big4">Big 4</span>, 2025. <a class="pdf-link" href="#">[PDF]</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">SauronEyes: Disentangling Voluminous Logs to Unveil Camouflaged Attack Intentions.</div>
+        <div class="paper-authors"><span class="me">Wei Qiao</span>, Weiheng Wu, Song Liu, Teng Li, Yebo Feng, Zehui Wang, Junrong Liu, Bo Jiang, Zhigang Lu, Baoxu Liu.</div>
+        <div><span class="paper-venue">TIFS</span><span class="tag tag-ccfa">CCF-A</span>, 2025. <a class="pdf-link" href="#">[PDF]</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">Forge: A Robust Multi-tab Website Fingerprinting Attack via Blind Source Separation.</div>
+        <div class="paper-authors">Yitan Huang, <span class="me">Wei Qiao</span><sup>#</sup>, Ding Wang, Meng Shen, Di Zhao, Linxu Li, Susu Cui, Bo Jiang, Zhigang Lu, Baoxu Liu.</div>
+        <div><span class="paper-venue">WWW</span><span class="tag tag-ccfa">CCF-A</span><span class="tag tag-oral">Oral</span>, 2026. <a class="pdf-link" href="#">[PDF]</a></div>
+      </div>
+
+      <div class="paper-item">
+        <div class="paper-title">Chaos: Robust Spatio-Temporal Fusion for Generalizable APT Provenance Tracing.</div>
+        <div class="paper-authors">Teng Li, <span class="me">Wei Qiao</span>*, Yebo Feng, Jiahua Xu, Paolo Tasca, Weiguo Lin, Zexu Dang, Zhuo Ma, Jianfeng Ma.</div>
+        <div><span class="paper-venue">DSPP</span> <span class="paper-award">Best Paper Award</span>, 2025. <a class="pdf-link" href="#">[PDF]</a></div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
