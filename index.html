@@ -200,6 +200,20 @@
       display: flex;
       justify-content: space-between;
     }
+
+    @media (max-width: 600px) {
+      body { padding: 12px 6px; }
+      .editor { border-radius: 4px; }
+      .titlebar-text { font-size: 0.7rem; }
+      .tabbar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .tab { padding: 7px 10px; font-size: 0.78rem; white-space: nowrap; flex-shrink: 0; }
+      .tab-icon { display: none; }
+      .ln { width: 28px; min-width: 28px; padding-right: 8px; font-size: 0.7rem; }
+      .line { padding-right: 8px; }
+      .content { font-size: 0.82rem; line-height: 1.6; }
+      .paper-item { padding-left: 8px; }
+      .tag { font-size: 0.65rem; padding: 1px 4px; }
+    }
   </style>
 </head>
 <body>
