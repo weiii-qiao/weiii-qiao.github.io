@@ -60,7 +60,8 @@
 /* Item borders */
 [data-theme="light"] .paper-item,
 [data-theme="light"] .pub-item,
-[data-theme="light"] .exp-item {
+[data-theme="light"] .exp-item,
+[data-theme="light"] .award-item {
   border-left-color: #c9c2b8;
 }
 
@@ -88,6 +89,10 @@
   color: #7a3a7a;
   border-color: rgba(122,58,122,0.3);
 }
+
+/* Honors & Awards */
+[data-theme="light"] .award-name { color: #6a5028; }
+[data-theme="light"] .award-detail { color: #5e5a54; }
 
 /* Publication page */
 [data-theme="light"] .pub-title { color: #6a5028; }
