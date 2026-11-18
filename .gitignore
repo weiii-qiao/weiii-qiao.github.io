@@ -1,0 +1,4 @@
+.DS_Store
+.local-preview/
+_site/
+.jekyll-cache/

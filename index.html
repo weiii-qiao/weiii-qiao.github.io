@@ -1,313 +1,215 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wei Qiao - Homepage</title>
-  <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('theme-preference')||'dark')</script>
-  <link rel="stylesheet" href="theme.css">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background-color: #1e1e1e;
-      color: #d4d4d4;
-      font-family: 'Consolas', 'Courier New', Monaco, monospace;
-      display: flex;
-      justify-content: center;
-      padding: 40px 16px;
-      min-height: 100vh;
-    }
-
-    .editor {
-      width: 100%;
-      max-width: 1050px;
-      background: #1e1e1e;
-      border: 1px solid #3c3c3c;
-      border-radius: 6px;
-      overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
-
-    /* 标题栏 */
-    .titlebar {
-      background: #323233;
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      border-bottom: 1px solid #3c3c3c;
-    }
-
-    .titlebar-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-    }
-
-    .dot-red { background: #ff5f57; }
-    .dot-yellow { background: #febc2e; }
-    .dot-green { background: #28c840; }
-
-    .titlebar-text {
-      flex: 1;
-      text-align: center;
-      color: #888;
-      font-size: 0.95rem;
-    }
-
-    /* Tab 栏 */
-    .tabbar {
-      background: #252526;
-      display: flex;
-      border-bottom: 1px solid #3c3c3c;
-    }
-
-    .tab {
-      padding: 8px 16px;
-      color: #888;
-      font-size: 0.85rem;
-      text-decoration: none;
-      border-right: 1px solid #3c3c3c;
-      transition: background 0.2s, color 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .tab:hover { background: #2d2d2d; color: #ccc; }
-
-    .tab.active {
-      background: #1e1e1e;
-      color: #fff;
-      border-bottom: 2px solid #007acc;
-      margin-bottom: -1px;
-    }
-
-    .tab-icon { font-size: 0.75rem; opacity: 0.6; }
-
-    /* 内容区 */
-    .content {
-      padding: 0;
-      line-height: 1.7;
-      font-size: 0.92rem;
-      overflow-x: auto;
-    }
-
-    .line {
-      display: flex;
-      padding: 0 16px 0 0;
-      min-height: 1.7em;
-    }
-
-    .line:hover { background: #2a2d2e; }
-
-    .ln {
-      width: 48px;
-      min-width: 48px;
-      text-align: right;
-      padding-right: 16px;
-      color: #555;
-      user-select: none;
-      font-size: 0.85rem;
-      line-height: 1.7;
-    }
-
-    .code {
-      flex: 1;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    /* 语法着色 */
-    .kw { color: #569cd6; }
-    .str { color: #ce9178; }
-    .fn { color: #dcdcaa; }
-    .cm { color: #6a9955; }
-    .type { color: #4ec9b0; }
-    .num { color: #b5cea8; }
-
-    a.link {
-      color: #4ec9b0;
-      text-decoration: none;
-    }
-    a.link:hover { text-decoration: underline; }
-
-    .section-sep {
-      border: none;
-      border-top: 1px solid #3c3c3c;
-      margin: 0;
-    }
-
-    /* Selected Papers 区域 */
-    .paper-item {
-      padding-left: 12px;
-      border-left: 2px solid #3c3c3c;
-      transition: border-color 0.3s;
-      margin-bottom: 12px;
-    }
-    .paper-item:hover { border-left-color: #007acc; }
-
-    .paper-title { color: #dcdcaa; }
-    .paper-authors { color: #808080; }
-    .paper-authors .me { color: #c586c0; text-decoration: underline; }
-    .paper-venue { color: #569cd6; font-style: italic; }
-    .paper-award { color: #dcdcaa; font-weight: 600; }
-
-    a.pdf-link {
-      color: #4ec9b0;
-      text-decoration: none;
-      font-size: 0.88rem;
-    }
-    a.pdf-link:hover { text-decoration: underline; }
-
-    .tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      padding: 1px 6px;
-      border-radius: 3px;
-      margin-left: 4px;
-      vertical-align: middle;
-    }
-    .tag-ccfa {
-      background: rgba(86,156,214,0.15);
-      color: #569cd6;
-      border: 1px solid rgba(86,156,214,0.3);
-    }
-    .tag-big4 {
-      background: rgba(220,220,170,0.12);
-      color: #dcdcaa;
-      border: 1px solid rgba(220,220,170,0.3);
-    }
-    .tag-oral {
-      background: rgba(197,134,192,0.15);
-      color: #c586c0;
-      border: 1px solid rgba(197,134,192,0.3);
-    }
-
-    /* Honors & Awards 区域 */
-    .award-item {
-      padding-left: 12px;
-      border-left: 2px solid #3c3c3c;
-      transition: border-color 0.3s;
-      margin-bottom: 12px;
-    }
-    .award-item:hover { border-left-color: #007acc; }
-    .award-name { color: #dcdcaa; font-weight: 600; }
-    .award-detail { color: #808080; }
-
-    .legend-line {
-      color: #6a9955;
-      font-size: 0.85rem;
-      padding: 8px 0;
-    }
-
-    /* 状态栏 */
-    .statusbar {
-      background: #007acc;
-      color: #fff;
-      padding: 3px 12px;
-      font-size: 0.75rem;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    @media (max-width: 600px) {
-      body { padding: 12px 6px; }
-      .editor { border-radius: 4px; }
-      .titlebar-text { font-size: 0.82rem; }
-      .tabbar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .tab { padding: 7px 10px; font-size: 0.78rem; white-space: nowrap; flex-shrink: 0; }
-      .tab-icon { display: none; }
-      .ln { width: 28px; min-width: 28px; padding-right: 8px; font-size: 0.7rem; }
-      .line { padding-right: 8px; }
-      .content { font-size: 0.82rem; line-height: 1.6; }
-      .paper-item { padding-left: 8px; }
-      .award-item { padding-left: 8px; }
-      .tag { font-size: 0.65rem; padding: 1px 4px; }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wei Qiao (乔伟) | Academic Homepage</title>
+  <meta name="author" content="Wei Qiao">
+  <meta name="description" content="Wei Qiao — Ph.D. student at Xidian University. Research in host-based intrusion detection, APT provenance, and LLM agents for security.">
+  <link rel="icon" type="image/svg+xml" href="images/wei-qiao.svg">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="profile.css">
+  <script src="profile.js" defer></script>
 </head>
 <body>
+<main>
+  <section id="about" class="page-section profile-header" aria-labelledby="profile-name">
+    <div>
+      <h1 id="profile-name">Wei Qiao &nbsp;|&nbsp; <span lang="zh-CN">乔伟</span> <button type="button" id="astronaut-btn" class="copy-bio" title="Copy bio" aria-label="Copy bio">🧑‍🚀</button></h1>
+      <p>I am a Ph.D. student in Cyberspace Security at Xidian University, advised by <a href="https://faculty.xidian.edu.cn/LT6/zh_CN/index.htm">Prof. Teng Li</a> in <a href="https://web.xidian.edu.cn/jfma/">Prof. Jianfeng Ma</a>’s group. I am also a Research Assistant in <a href="https://personal.ntu.edu.sg/yangliu/">Prof. Yang Liu</a>’s group at Nanyang Technological University (NTU).</p>
+      <p>I received my master’s degree from the Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS) in July 2026, advised by <a href="https://people.ucas.ac.cn/~bojiang">Assoc. Prof. Bo Jiang</a> in <a href="https://people.ucas.ac.cn/~luzhigang">Prof. Zhigang Lu</a>’s team. I hold a B.E. in Software Engineering from Xidian University.</p>
+      <p class="research-interests"><strong>Research interests:</strong> Host-based Intrusion Detection · APT Provenance · LLM Agents for Security</p>
+      <p class="contact-links"><a href="mailto:qiaoweixidian@gmail.com" id="email-copy" class="email-link" title="Copy email address"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email: <span class="contact-sub">qiaoweixidian@gmail.com</span></a>
+        <a class="scholar-link" href="https://scholar.google.com/citations?user=_OFu_KEAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1.5 9 12 15 22.5 9 12 3Z"/><path d="M5 12.1v4.2c0 1.2 3.1 3.2 7 3.2s7-2 7-3.2v-4.2l-7 4-7-4Z"/></svg>Google Scholar</a>
+        <a class="orcid-link" href="https://orcid.org/0000-0003-1561-9466" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="12"/><circle cx="6.2" cy="6.5" r="1" fill="#fff"/><path fill="#fff" d="M5.4 9h1.6v9H5.4zm4.2 0h3.1c3.3 0 5.4 1.7 5.4 4.5S16 18 12.7 18H9.6zm1.6 1.5v6h1.5c2.4 0 3.8-1.1 3.8-3s-1.4-3-3.8-3z"/></svg>ORCID</a></p>
+    </div>
+    <img class="profile-mark" src="images/wei-qiao.jpg" width="800" height="1200" alt="Wei Qiao outdoors in the mountains">
+  </section>
+  <nav class="section-links" aria-label="Page sections"><a href="#about">About</a><a href="#news">News</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#awards">Awards</a></nav>
+  <section id="news" class="page-section" aria-labelledby="news-title">
+    <h2 id="news-title">News</h2>
+    <ul class="news-entries">
+      <li><span class="news-date-badge">2026</span> I received the <span class="news-highlight">National Scholarship for Graduate Students</span> (国家奖学金)!</li>
+      <li><span class="news-date-badge">2026</span> Our paper <strong>Cutting the Fuse</strong> was accepted to <span class="news-highlight">USENIX Security 2026</span>.</li>
+      <li><span class="news-date-badge">2026</span> Our paper <strong>Forge</strong> was accepted to <span class="news-highlight">WWW 2026</span> as an oral presentation.</li>
+      <li><span class="news-date-badge">2025</span> Our paper <strong>Slot</strong> was accepted to <span class="news-highlight">CCS 2025</span>.</li>
+    </ul>
+  </section>
+  <section id="publications" class="page-section" aria-labelledby="publications-title">
+    <h2 id="publications-title">Publications</h2>
+    <p class="publication-note"># Co-first author. * Corresponding author.</p>
+    <div class="tag-filter" id="tagFilter" role="group" aria-label="Filter publications">
+      <button type="button" class="tag-btn" data-tag="all" aria-pressed="false">All</button>
+      <button type="button" class="tag-btn active" data-tag="selected" aria-pressed="true">Selected</button>
+      <button type="button" class="tag-btn" data-tag="2026" aria-pressed="false">2026</button>
+      <button type="button" class="tag-btn" data-tag="2025" aria-pressed="false">2025</button>
+      <button type="button" class="tag-btn" data-tag="2023" aria-pressed="false">2023</button>
+    </div>
+    <table class="publications-table" aria-label="Publications"><tbody>
+<tr data-tags="2026,selected" class="selected-paper">
 
-<div class="editor">
-  <div class="titlebar">
-    <div class="titlebar-dot dot-red"></div>
-    <div class="titlebar-dot dot-yellow"></div>
-    <div class="titlebar-dot dot-green"></div>
-    <div class="titlebar-text">Wei Qiao (乔伟) · ✉ qiaoweixidian@gmail.com</div>
-    <span class="theme-toggle" onclick="toggleTheme()">☀</span>
-  </div>
+      <td class="paper-card"><div class="paper-layout"><a class="paper-image-link" href="images/paper/cutting-the-fuse-counterfactual.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size Cutting the Fuse figure"><img class="paper-image" src="images/paper/cutting-the-fuse-counterfactual.webp" alt="Counterfactual attack example: different edge interventions and the resulting attack or benign predictions" width="735" height="465" loading="lazy" decoding="async"><span class="paper-image-caption">Fig. 3 · View figure ↗</span></a><div class="paper-content"><h3>Cutting the Fuse: Actionable APT Attack Blocking in Provenance-based IDS.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-0">Weiheng Wu, <strong>Wei Qiao</strong><sup>#</sup>, Teng Li, Yebo Feng, Zhuo Ma, Jianfeng Ma, Yang Liu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-0" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>Proceedings of the 35th USENIX Security Symposium (USENIX Security)</em>, 2026.</p>
+        <div class="paper-badges"><span class="paper-badge">CCF-A</span><span class="paper-badge">Big 4</span></div>
+      </div></div></td></tr>
+<tr data-tags="2026,selected" class="selected-paper">
 
-  <div class="tabbar">
-    <a class="tab active" href="person.html"><span class="tab-icon">📄</span> about.md</a>
-    <a class="tab" href="publication.html"><span class="tab-icon">📄</span> publication.md</a>
-    <a class="tab" href="experience.html"><span class="tab-icon">📄</span> experience.md</a>
-    <a class="tab" href="#"><span class="tab-icon">📄</span> resume.md</a>
-  </div>
+      <td class="paper-card"><div class="paper-layout"><a class="paper-image-link" href="images/paper/forge-cocktail-party.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size Forge figure"><img class="paper-image" src="images/paper/forge-cocktail-party.webp" alt="Cocktail party analogy: separating one speaker from mixed signals, motivating Forge’s traffic separation" width="516" height="222" loading="lazy" decoding="async"><span class="paper-image-caption">Fig. 1b · View figure ↗</span></a><div class="paper-content"><h3>Forge: A Robust Multi-tab Website Fingerprinting Attack via Blind Source Separation.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-1">Yitan Huang, <strong>Wei Qiao</strong><sup>#</sup>, Ding Wang, Meng Shen, Di Zhao, Linxu Li, Susu Cui, Bo Jiang, Zhigang Lu, Baoxu Liu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-1" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>Proceedings of the ACM on Web Conference 2026 (WWW)</em>, 2026.</p>
+        <div class="paper-badges"><span class="paper-badge">CCF-A</span><span class="paper-badge">Oral</span></div>
+      </div></div></td></tr>
+<tr data-tags="2026" class="">
 
-  <div class="content">
-    <div class="line"><span class="ln">1</span><span class="code"><span class="cm">// About Me</span></span></div>
-    <div class="line"><span class="ln">2</span><span class="code"></span></div>
-    <div class="line"><span class="ln">3</span><span class="code"><span class="kw">const</span> <span class="type">about</span> = {</span></div>
-    <div class="line"><span class="ln">4</span><span class="code">  <span class="str">"introduction"</span>: <span class="str">"I am an incoming Ph.D. student at Xidian University, where I will be advised by <a class='link' href='https://faculty.xidian.edu.cn/LT6/zh_CN/index.htm'>Prof. Teng Li</a> in <a class='link' href='https://web.xidian.edu.cn/jfma/'>Prof. Jianfeng Ma</a>'s group. Currently, I am a Research Assistant in <a class='link' href='https://personal.ntu.edu.sg/yangliu/'>Prof. Yang Liu</a>'s group at Nanyang Technological University (NTU)."</span>,</span></div>
-    <div class="line"><span class="ln">5</span><span class="code"></span></div>
-    <div class="line"><span class="ln">6</span><span class="code">  <span class="str">"education"</span>: <span class="str">"I am a Ph.D. student in Cyberspace Security at Xidian University since Sep. 2026. I received my Master's degree from the Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS) in Jul. 2026, advised by <a class='link' href='https://people.ucas.ac.cn/~bojiang'>Assoc. Prof. Bo Jiang</a> in <a class='link' href='https://people.ucas.ac.cn/~luzhigang'>Prof. Zhigang Lu</a>'s team. I hold a B.E. in Software Engineering from Xidian University."</span>,</span></div>
-    <div class="line"><span class="ln">7</span><span class="code"></span></div>
-    <div class="line"><span class="ln">8</span><span class="code">  <span class="str">"research"</span>: [</span></div>
-    <div class="line"><span class="ln">9</span><span class="code">    <span class="str">"Host-based Intrusion Detection"</span>,</span></div>
-    <div class="line"><span class="ln">10</span><span class="code">    <span class="str">"APT Provenance"</span>,</span></div>
-    <div class="line"><span class="ln">11</span><span class="code">    <span class="str">"LLM Agents for Security"</span></span></div>
-    <div class="line"><span class="ln">12</span><span class="code">  ]</span></div>
-    <div class="line"><span class="ln">13</span><span class="code">};</span></div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>Btda: A Robust Framework for Encrypted Traffic Classification with Byte-Level TLS Data Augmentation.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-2">Ding Wang, Xiaobo Yang, Zelin Cui, <strong>Wei Qiao</strong>, Weiheng Wu, Yitan Huang, Susu Cui, Bo Jiang, Zhigang Lu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-2" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, 2026.</p>
 
-    <hr class="section-sep">
+      </div></div></td></tr>
+<tr data-tags="2026" class="">
 
-    <div class="line"><span class="ln">14</span><span class="code"></span></div>
-    <div class="line"><span class="ln">15</span><span class="code"><span class="cm">// Selected Papers</span></span></div>
-    <div class="line"><span class="ln">16</span><span class="code"><span class="legend-line">// <span style="text-decoration:underline;">Wei Qiao</span> | # Co-first Author | * Corresponding Author</span></span></div>
-    <div class="line"><span class="ln">17</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>TrafficMoE: Adaptive Multi-Perspective Feature Fusion for Enhancing Malicious Traffic General Detection Capability.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-3">Jian Qin, Xueying Han, Yunpeng Li, Dongqi Han, <strong>Wei Qiao</strong>, Xiaobo Yang, Zelin Cui, Bo Jiang, Zhigang Lu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-3" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, 2026.</p>
 
-    <div class="line"><span class="ln">18</span><span class="code"><div class="paper-item"><span class="paper-title">Cutting the Fuse: Actionable APT Attack Blocking in Provenance-based IDS.</span><br><span class="paper-authors">Weiheng Wu, <span class="me">Wei Qiao</span><sup>#</sup>, Teng Li, Yebo Feng, Zhuo Ma, Jianfeng Ma, Yang Liu.</span><br><span class="paper-venue">USENIX Security</span><span class="tag tag-ccfa">CCF-A</span><span class="tag tag-big4">Big 4</span>, 2026. <a class="pdf-link" href="#">[PDF]</a></div></span></div>
+      </div></div></td></tr>
+<tr data-tags="2026" class="">
 
-    <div class="line"><span class="ln">19</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>FLARE: Fine-grained Lateral Movement Detection via Temporal Edge Learning.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-4">Deli Kong, Xueying Han, Boyuan Xu, <strong>Wei Qiao</strong>, Tian Tian, Yiru Gong, Bo Jiang, Zhigang Lu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-4" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>The 27th International Conference on Web Information Systems Engineering (WISE)</em>, 2026.</p>
 
-    <div class="line"><span class="ln">20</span><span class="code"><div class="paper-item"><span class="paper-title">Slot: Provenance-Driven APT Detection through Graph Reinforcement Learning.</span><br><span class="paper-authors"><span class="me">Wei Qiao</span>, Yebo Feng, Teng Li, Zhuo Ma, Yulong Shen, JianFeng Ma, Yang Liu.</span><br><span class="paper-venue">CCS</span><span class="tag tag-ccfa">CCF-A</span><span class="tag tag-big4">Big 4</span>, 2025. <a class="pdf-link" href="#">[PDF]</a></div></span></div>
+      </div></div></td></tr>
+<tr data-tags="2025,selected" class="selected-paper">
 
-    <div class="line"><span class="ln">21</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><a class="paper-image-link" href="images/paper/slot-neighbor-selection.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size Slot figure"><img class="paper-image" src="images/paper/slot-neighbor-selection.webp" alt="Reinforcement-learning-guided graph neighbor selection with an agent, state transition, action, and reward" width="552" height="375" loading="lazy" decoding="async"><span class="paper-image-caption">Fig. 5 · View figure ↗</span></a><div class="paper-content"><h3>Slot: Provenance-Driven APT Detection through Graph Reinforcement Learning.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-5"><strong>Wei Qiao</strong>, Yebo Feng, Teng Li, Zhuo Ma, Yulong Shen, JianFeng Ma, Yang Liu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-5" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>Proceedings of the 2025 ACM SIGSAC Conference on Computer and Communications Security (CCS)</em>, 2025, pp. 963-977.</p>
+        <div class="paper-badges"><span class="paper-badge">CCF-A</span><span class="paper-badge">Big 4</span></div>
+      </div></div></td></tr>
+<tr data-tags="2025,selected" class="selected-paper">
 
-    <div class="line"><span class="ln">22</span><span class="code"><div class="paper-item"><span class="paper-title">SauronEyes: Disentangling Voluminous Logs to Unveil Camouflaged Attack Intentions.</span><br><span class="paper-authors"><span class="me">Wei Qiao</span>, Weiheng Wu, Song Liu, Teng Li, Yebo Feng, Zehui Wang, Junrong Liu, Bo Jiang, Zhigang Lu, Baoxu Liu.</span><br><span class="paper-venue">TIFS</span><span class="tag tag-ccfa">CCF-A</span>, 2025. <a class="pdf-link" href="#">[PDF]</a></div></span></div>
+      <td class="paper-card"><div class="paper-layout"><a class="paper-image-link" href="images/paper/sauroneyes-overlapping-clusters.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size SauronEyes figure"><img class="paper-image" src="images/paper/sauroneyes-overlapping-clusters.webp" alt="Overlapping attack clusters: two communities sharing graph nodes" width="441" height="261" loading="lazy" decoding="async"><span class="paper-image-caption">Fig. 4 · View figure ↗</span></a><div class="paper-content"><h3>SauronEyes: Disentangling Voluminous Logs to Unveil Camouflaged Attack Intentions.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-6"><strong>Wei Qiao</strong>, Weiheng Wu, Song Liu, Teng Li, Yebo Feng, Zehui Wang, Junrong Liu, Bo Jiang, Zhigang Lu, Baoxu Liu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-6" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>IEEE Transactions on Information Forensics and Security (TIFS)</em>, 2025.</p>
+        <div class="paper-badges"><span class="paper-badge">CCF-A</span></div>
+      </div></div></td></tr>
+<tr data-tags="2025,selected" class="selected-paper">
 
-    <div class="line"><span class="ln">23</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><a class="paper-image-link" href="images/paper/chaos-framework.png" target="_blank" rel="noopener noreferrer" aria-label="View full-size Chaos framework figure"><img class="paper-image" src="images/paper/chaos-framework.webp" alt="Chaos framework: graph construction, spatio-temporal graph representation, anomaly detection, and adaptation" width="1029" height="408" loading="lazy" decoding="async"><span class="paper-image-caption">Fig. 2 · View figure ↗</span></a><div class="paper-content"><h3>Chaos: Robust Spatio-Temporal Fusion for Generalizable APT Provenance Tracing.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-7">Teng Li, <strong>Wei Qiao</strong><sup>*</sup>, Yebo Feng, Jiahua Xu, Paolo Tasca, Weiguo Lin, Zexu Dang, Zhuo Ma, Jianfeng Ma.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-7" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>International Conference on Data Security and Privacy Protection (DSPP)</em>, 2025, pp. 507-524. <span class="pub-award">Best Paper Award</span></p>
 
-    <div class="line"><span class="ln">24</span><span class="code"><div class="paper-item"><span class="paper-title">Forge: A Robust Multi-tab Website Fingerprinting Attack via Blind Source Separation.</span><br><span class="paper-authors">Yitan Huang, <span class="me">Wei Qiao</span><sup>#</sup>, Ding Wang, Meng Shen, Di Zhao, Linxu Li, Susu Cui, Bo Jiang, Zhigang Lu, Baoxu Liu.</span><br><span class="paper-venue">WWW</span><span class="tag tag-ccfa">CCF-A</span><span class="tag tag-oral">Oral</span>, 2026. <a class="pdf-link" href="#">[PDF]</a></div></span></div>
+      </div></div></td></tr>
+<tr data-tags="2025" class="">
 
-    <div class="line"><span class="ln">25</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>Brewing Vodka: Distilling Pure Knowledge for Lightweight Threat Detection in Audit Logs.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-8">Weiheng Wu, <strong>Wei Qiao</strong>, Wenhao Yan, Bo Jiang, Yuling Liu, Baoxu Liu, Zhigang Lu, Junrong Liu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-8" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>Proceedings of the ACM on Web Conference 2025 (WWW)</em>, 2025, pp. 2172-2182.</p>
 
-    <div class="line"><span class="ln">26</span><span class="code"><div class="paper-item"><span class="paper-title">Chaos: Robust Spatio-Temporal Fusion for Generalizable APT Provenance Tracing.</span><br><span class="paper-authors">Teng Li, <span class="me">Wei Qiao</span>*, Yebo Feng, Jiahua Xu, Paolo Tasca, Weiguo Lin, Zexu Dang, Zhuo Ma, Jianfeng Ma.</span><br><span class="paper-venue">DSPP</span> <span class="paper-award">Best Paper Award</span>, 2025. <a class="pdf-link" href="#">[PDF]</a></div></span></div>
+      </div></div></td></tr>
+<tr data-tags="2025" class="">
 
-    <div class="line"><span class="ln">27</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>Sentient: Multi-Scenario Behavioral Intent Analysis for Advanced Persistent Threat Detection.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-9">Wenhao Yan, Ning An, <strong>Wei Qiao</strong>, Weiheng Wu, Bo Jiang, Yuling Liu, Zhigang Lu, Junrong Liu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-9" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>AAAI Conference on Artificial Intelligence (AAAI)</em>, 2025.</p>
 
-    <hr class="section-sep">
+      </div></div></td></tr>
+<tr data-tags="2025" class="">
 
-    <div class="line"><span class="ln">28</span><span class="code"></span></div>
-    <div class="line"><span class="ln">29</span><span class="code"><span class="cm">// Honors &amp; Awards</span></span></div>
-    <div class="line"><span class="ln">30</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>Towards Effective Black-Box Attacks on DoH Tunnel Detection Systems.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-10">Linghao Li, Yan Zhu, Yun Li, <strong>Wei Qiao</strong>, Zelin Cui, Susu Cui, Bo Jiang, Zhigang Lu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-10" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>Computer Networks</em>, 2025, pp. 111524.</p>
 
-    <div class="line"><span class="ln">31</span><span class="code"><div class="award-item"><span class="award-name">🎖️ National Scholarship for Graduate Students (国家奖学金, ¥30,000)</span><br><span class="award-detail">Ministry of Education of China, 2026.</span></div></span></div>
+      </div></div></td></tr>
+<tr data-tags="2025" class="">
 
-    <div class="line"><span class="ln">32</span><span class="code"></span></div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>PathWatcher: A Path-Based Behavior Detection Method for Attack Detection and Investigation.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-11">Zehui Wang, Hao Li, Yinhao Qi, <strong>Wei Qiao</strong>, Song Liu, Chen Zhang, Bo Jiang, Zhigang Lu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-11" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>Computers &amp; Security</em>, 2025, pp. 104563.</p>
 
-    <div class="line"><span class="ln">33</span><span class="code"><div class="award-item"><span class="award-name">🏆 Best Paper Award</span><br><span class="award-detail">International Conference on Data Security and Privacy Protection (DSPP), 2025.</span></div></span></div>
-  </div>
+      </div></div></td></tr>
+<tr data-tags="2025" class="">
 
-  <div class="statusbar">
-    <span>main</span>
-    <span>UTF-8 | Markdown</span>
-  </div>
-</div>
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>PanThreat: Global Resource-Based Anomaly Detection for APTs.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-12">Wenhao Yan, Weiheng Wu, Bingsheng Bi, <strong>Wei Qiao</strong>, Bo Jiang, Yuling Liu, Junrong Liu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-12" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>28th International Conference on Computer Supported Cooperative Work in Design (CSCWD)</em>, 2025, pp. 135-140.</p>
 
-<script src="theme.js"></script>
+      </div></div></td></tr>
+<tr data-tags="2025" class="">
+
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>DCASI: A Sequence-based Attack Investigation Method Using DTW Contrastive Learning.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-13">Yun Li, <strong>Wei Qiao</strong>, Yan Zhu, Yunxiang Wang, Bo Jiang, Zhigang Lu.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-13" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, 2025, pp. 1-5.</p>
+
+      </div></div></td></tr>
+<tr data-tags="2025" class="">
+
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>LogWF: Anomaly Detection for Distributed Systems Based on Log Workflow Mining.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-14">Teng Li, Shengkai Zhang, Yebo Feng, Jiahua Xu, Yaxuan Xie, <strong>Wei Qiao</strong>, Jianfeng Ma.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-14" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>45th IEEE International Conference on Distributed Computing Systems WorkShop (ICDCSW)</em>, 2025.</p>
+
+      </div></div></td></tr>
+<tr data-tags="2023" class="">
+
+      <td class="paper-card"><div class="paper-layout"><div class="paper-content"><h3>T-trace: Constructing the APTs Provenance Graphs through Multiple Syslogs Correlation.</h3>
+        <div class="publication-authors-shell"><div class="publication-authors" id="authors-15">Teng Li, Ximeng Liu, <strong>Wei Qiao</strong>, Xiongjie Zhu, Yulong Shen, Jianfeng Ma.</div><button type="button" class="publication-authors-toggle" aria-controls="authors-15" aria-expanded="false" aria-label="Expand author list" title="Expand author list">▶</button></div>
+        <p class="paper-venue"><em>IEEE Transactions on Dependable and Secure Computing (TDSC)</em>, 2023, vol. 21, no. 3, pp. 1179-1195.</p>
+
+      </div></div></td></tr>
+    </tbody></table>
+  </section>
+  <section id="experience" class="page-section" aria-labelledby="experience-title">
+    <h2 id="experience-title">Experience</h2>
+    <h3 class="subsection-title">Education</h3>
+    <ul class="experience-list">
+<li class="experience-entry"><span class="experience-date">Sep. 2026 - Present</span><div><h4>Xidian University</h4><p>Ph.D. in Cyberspace Security</p><p class="experience-detail">Advisor: <a href="https://faculty.xidian.edu.cn/LT6/zh_CN/index.htm">Prof. Teng Li</a>, in <a href="https://web.xidian.edu.cn/jfma/">Prof. Jianfeng Ma</a>’s group.</p></div></li>
+<li class="experience-entry"><span class="experience-date">Sep. 2023 - Jul. 2026</span><div><h4>Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS), Group 4 (G4), Laboratory 9</h4><p>Master&#x27;s Degree</p><p class="experience-detail">Advisor: <a href="https://people.ucas.ac.cn/~bojiang">Assoc. Prof. Bo Jiang</a>, in <a href="https://people.ucas.ac.cn/~luzhigang">Prof. Zhigang Lu</a>’s team.</p></div></li>
+<li class="experience-entry"><span class="experience-date">Sep. 2017 - Jun. 2021</span><div><h4>Xidian University</h4><p>Bachelor of Engineering</p><p class="experience-detail">Software Engineering</p></div></li>
+    </ul>
+    <h3 class="subsection-title">Research &amp; Industry</h3>
+    <ul class="experience-list">
+<li class="experience-entry"><span class="experience-date">May. 2026 - Present</span><div><h4>Nanyang Technological University (NTU)</h4><p>Research Assistant</p><p class="experience-detail">Research group of <a href="https://personal.ntu.edu.sg/yangliu/">Prof. Yang Liu</a>.</p></div></li>
+<li class="experience-entry"><span class="experience-date">Sep. 2025 - Apr. 2026</span><div><h4>Bybit, Risk Control Algorithm Department</h4><p>Security Algorithm Intern</p></div></li>
+<li class="experience-entry"><span class="experience-date">Mar. 2023 - Sep. 2023</span><div><h4>Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS)</h4><p>Research Intern</p></div></li>
+<li class="experience-entry"><span class="experience-date">Sep. 2022 - Nov. 2022</span><div><h4>Huawei, Cloud Computing</h4><p>Software Development Engineer</p></div></li>
+<li class="experience-entry"><span class="experience-date">Jun. 2021 - Sep. 2022</span><div><h4>Xidian University</h4><p>Research Assistant</p></div></li>
+    </ul>
+  </section>
+  <section id="awards" class="page-section" aria-labelledby="awards-title">
+    <h2 id="awards-title">Awards and Honors</h2>
+    <ul class="awards-list"><li><strong>National Scholarship for Graduate Students (国家奖学金, ¥30,000)</strong><p>Ministry of Education of China, 2026.</p></li><li><strong>Best Paper Award</strong><p>International Conference on Data Security and Privacy Protection (DSPP), 2025.</p></li></ul>
+  </section>
+</main>
+  <section class="mountain-footer" aria-label="Footer landscape">
+    <div class="mountain-stage">
+      <picture>
+        <source type="image/webp" srcset="images/experience/background-960.webp 960w, images/experience/background-1440.webp 1440w, images/experience/background-1920.webp 1920w" sizes="100vw">
+        <img class="mountain-img" src="images/experience/background.jpeg" alt="Planetary landscape" loading="lazy" decoding="async" fetchpriority="low"
+             onerror="this.style.display='none'; this.closest('picture').nextElementSibling.style.display='block';">
+      </picture>
+      <div class="mountain-fallback" style="display:none;"></div>
+      <div class="mountain-content">
+        <h2>Keep Exploring</h2>
+        <p class="mountain-sub">Do what matters, even when it's hard.</p>
+        <a href="mailto:qiaoweixidian@gmail.com" class="mountain-cta">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <span>Get in Touch</span>
+        </a>
+        <p class="mountain-footnote">
+          <span>Wei Qiao · 乔伟</span>
+          <span class="mountain-updated">Last updated: <!-- LAST_UPDATED_START -->November 18, 2026<!-- LAST_UPDATED_END -->.</span>
+          <span class="mountain-template">
+            Adapted from <a href="https://github.com/w-r-s/academic-homepage-template">w-r-s / academic-homepage-template</a>.
+          </span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+<button type="button" id="backToTop" title="Back to top" aria-label="Back to top"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div id="toast" class="toast-message" role="status" aria-live="polite"></div>
 </body>
 </html>
