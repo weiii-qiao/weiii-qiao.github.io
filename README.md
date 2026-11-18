@@ -44,3 +44,5 @@ Figures are extracted from the author's papers. Page numbers are PDF-file page n
 
 - [Google Scholar](https://scholar.google.com/citations?user=_OFu_KEAAAAJ&hl=en)
 - [ORCID](https://orcid.org/0000-0003-1561-9466)
+
+The About biography supports English / 中文. The language choice is remembered locally when browser storage is available; the copy-bio button copies the visible language. Publications, News, Experience, Awards and navigation retain their original content. Figure links have a slim border and 6px inset, keeping their 220px overall width and intrinsic image height.

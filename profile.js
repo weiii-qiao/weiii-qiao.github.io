@@ -1,3 +1,27 @@
+// Only the About biography changes language; publication content remains unchanged.
+const bioPanels = Array.from(document.querySelectorAll('.profile-bio'));
+const bioLanguageButtons = Array.from(document.querySelectorAll('[data-bio-language]'));
+function setBioLanguage(language) {
+  const selectedLanguage = language === 'zh-CN' ? 'zh-CN' : 'en';
+  bioPanels.forEach(panel => { panel.hidden = panel.lang !== selectedLanguage; });
+  bioLanguageButtons.forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.bioLanguage === selectedLanguage));
+  });
+  const copyButton = document.getElementById('astronaut-btn');
+  copyButton.title = selectedLanguage === 'zh-CN' ? '复制简介' : 'Copy bio';
+  copyButton.setAttribute('aria-label', copyButton.title);
+}
+let savedBioLanguage = 'en';
+try { savedBioLanguage = localStorage.getItem('profile-language') || 'en'; } catch { /* Language switching also works without storage. */ }
+setBioLanguage(savedBioLanguage);
+bioLanguageButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    setBioLanguage(button.dataset.bioLanguage);
+    try { localStorage.setItem('profile-language', button.dataset.bioLanguage); } catch { /* Keep the in-page selection. */ }
+  });
+});
+document.querySelector('.bio-language-switch').hidden = false;
+
 // Publication controls retain the template's filter and author-expansion behavior.
 const rows = Array.from(document.querySelectorAll('tr[data-tags]'));
 const filters = Array.from(document.querySelectorAll('.tag-btn'));
@@ -77,7 +101,7 @@ async function copyText(text, event) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
 }
 document.getElementById('astronaut-btn').addEventListener('click', event => {
-  copyText('Wei Qiao is a Ph.D. student in Cyberspace Security at Xidian University and a Research Assistant at Nanyang Technological University. Research interests include host-based intrusion detection, APT provenance, and LLM agents for security.', event);
+  copyText(document.querySelector('.profile-bio:not([hidden])').innerText.trim(), event);
 });
 document.getElementById('email-copy').addEventListener('click', event => {
   event.preventDefault();
