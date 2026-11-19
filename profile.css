@@ -65,11 +65,13 @@ button:focus-visible, a:focus-visible { outline: 2px solid #174b80; outline-offs
 .publications-table .paper-card { padding: 18px; border: 1px solid #e1e5ea; border-radius: 8px; background: #fff; }
 .paper-layout { display: grid; grid-template-columns: minmax(0,1fr); align-items: center; }
 .paper-layout:has(> .paper-image, > .paper-image-link) { grid-template-columns: var(--paper-image-width) minmax(0,1fr); gap: 20px; }
+/* In text-only filters, release the thumbnail column as well as hiding the image. */
+#publications:has([data-tag="selected"][aria-pressed="false"]) .paper-layout { grid-template-columns: minmax(0,1fr); gap: 0; }
+#publications:has([data-tag="selected"][aria-pressed="false"]) .paper-layout > :is(.paper-image, .paper-image-link) { display: none; }
 .paper-image { display: block; width: var(--paper-image-width); max-width: 100%; height: auto; object-fit: contain; border-radius: 5px; }
 .paper-image-link { display: block; width: var(--paper-image-width); max-width: 100%; min-width: 0; padding: 6px; border: 1px solid #e1e5ea; border-radius: 6px; background: #fff; color: #6b7280; text-align: center; }
 .paper-image-link .paper-image { width: 100%; height: auto; max-width: none; max-height: none; object-fit: contain; border-radius: 0; }
 .paper-image-link:hover { border-color: #aeb6c0; color: #343a43; text-decoration: none; }
-.paper-image-caption { display: block; margin-top: 6px; font-size: 11px; line-height: 1.3; }
 .paper-content { min-width: 0; }
 .publication-authors { color: #555; }
 .publication-authors strong { color: #222; text-decoration: underline; text-underline-offset: 2px; }
