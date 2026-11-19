@@ -7,9 +7,6 @@ function setBioLanguage(language) {
   bioLanguageButtons.forEach(button => {
     button.setAttribute('aria-pressed', String(button.dataset.bioLanguage === selectedLanguage));
   });
-  const copyButton = document.getElementById('astronaut-btn');
-  copyButton.title = selectedLanguage === 'zh-CN' ? '复制简介' : 'Copy bio';
-  copyButton.setAttribute('aria-label', copyButton.title);
 }
 let savedBioLanguage = 'en';
 try { savedBioLanguage = localStorage.getItem('profile-language') || 'en'; } catch { /* Language switching also works without storage. */ }
@@ -100,9 +97,6 @@ async function copyText(text, event) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
 }
-document.getElementById('astronaut-btn').addEventListener('click', event => {
-  copyText(document.querySelector('.profile-bio:not([hidden])').innerText.trim(), event);
-});
 document.getElementById('email-copy').addEventListener('click', event => {
   event.preventDefault();
   copyText('qiaoweixidian@gmail.com', event);
